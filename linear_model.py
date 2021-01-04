@@ -67,14 +67,3 @@ for param in linear_parameters:
   plot_acf(linear_samples[param])
   plt.title('Autocorrelation of '+ str(param) +' samples')
 plt.show()
-
-
-
-
-	
-
-
-
-
-
-
