@@ -59,6 +59,9 @@ def plot_acf(x):
 
 import seaborn as sns
 def pair_plot_model(samples, parameters):
+	'''
+	Generate pair plots for stan model parameters
+	'''
 	df1 = pd.DataFrame(data = np.transpose([samples[param] for param in parameters]), columns = parameters)
 	sns.pairplot(df1, height = 2.5, plot_kws = {'marker': '.', 'alpha': 0.2})
 	plt.show()
