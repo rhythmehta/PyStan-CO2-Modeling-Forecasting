@@ -56,3 +56,9 @@ def plot_acf(x):
     '''
     plt.acorr(x, maxlags=20, 
               detrend=lambda x: signal.detrend(x, type='constant'))
+
+import seaborn as sns
+def pair_plot_model(samples, parameters):
+	df1 = pd.DataFrame(data = np.transpose([samples[param] for param in parameters]), columns = parameters)
+	sns.pairplot(df1, height = 2.5, plot_kws = {'marker': '.', 'alpha': 0.2})
+	plt.show()
