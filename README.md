@@ -19,7 +19,7 @@ Data file: "weekly_in_situ_co2_mlo.csv" via [Mauna Loa Observatory Dataset from 
 - c3 = atan2(phi_x, phi_y); //phi
 
 ### Likelihood
-- level[i] ~ normal(c0+c1* t[i]+(c2* (t[i]^2)) + (c4)* cos(((2* pi()* t[i])/ 365.25)+ c3), noise)
+- level[i] ~ normal(c0+ c1* t[i]+ (c2* (t[i]^2)) + (c4)* cos(((2* pi* t[i])/ 365.25)+ c3), noise)
 
 ## Linear Model
 
@@ -33,7 +33,7 @@ Data file: "weekly_in_situ_co2_mlo.csv" via [Mauna Loa Observatory Dataset from 
 - c4; //gaussian noise
 
 ### Likelihood 
-- x_t[i] ~ normal(c0 + c1* t[i] + c2* cos((2* pi()* t[i])/ 365.25 + c3), c4);
+- x_t[i] ~ normal(c0 + c1* t[i] + c2* cos((2* pi* t[i])/ 365.25 + c3), c4);
 
 ### function 1, y = mx + c
 - f1 = c0 + c1*t
